@@ -13,3 +13,6 @@ body{
     display: block;
     background: url("img/headlogo.png") repeat-x;
 }
+.jumbotron {
+    background: grey;
+}
