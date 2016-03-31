@@ -1,11 +1,11 @@
 <div *ngIf="player">
     <h2>{{player.name}} details!</h2>
-    <div>
-        <label>id: </label>{{player.id}}
-    </div>
-    <div>
+
+    <div class="{{player.name}}">
         <label>name: </label>
-        <input [(ngModel)]="player.name" placeholder="name"/>
+        <label>{{player.firstname}} {{player.lastname}}</label>
+        <img src="http://csgo-stats.com/{{player.statlink}}/graphic.png"/>
+        <a target="_blank" href="https://steamcommunity.com/{{player.steam}}">STEAM</a>
     </div>
     <button (click)="goBack()">Back</button>
 </div>
