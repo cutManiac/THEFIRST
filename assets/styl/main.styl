@@ -1,7 +1,30 @@
-.pupanya
-  background red
-  a
-    background black
+mainColor=#323251
+secondColor=#74707F
+thirdColor=#585D84
+fourthColor=#EAD27F
+fifthColor=#776A58
 
-.cutman
-  background blue
+@font-face {
+  font-family: "ACLineRegular";
+  src: url("../fonts/ACLineRegular/ACLineRegular.eot");
+  src: url("../fonts/ACLineRegular/ACLineRegular.eot?#iefix")format("embedded-opentype"),
+  url("../fonts/ACLineRegular/ACLineRegular.woff") format("woff"),
+  url("../fonts/ACLineRegular/ACLineRegular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+html
+  font 16pt ACLineRegular
+  background-color secondColor
+
+a
+  text-decoration none
+  :hover
+    text-decoration dotted
+
+.header
+  width 100%
+  height 3em
+  background-color maincolor
+  display block

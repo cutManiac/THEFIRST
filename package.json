@@ -2,8 +2,9 @@
   "name": "THEFIRST",
   "version": "1.0.0",
   "scripts": {
-    "start": "concurrently \"npm run gulp\" \"npm run nano\" ",
-    "startold": "concurrently \"npm run tsc:w\" \"npm run nano\" ",
+    "start": "concurrently \"npm run gulp\" \"npm run lite\" ",
+    "startnano": "concurrently \"npm run gulp\" \"npm run nano\" ",
+    "starttsc": "concurrently \"npm run tsc:w\" \"npm run lite\" ",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
     "gulp": "gulp",

@@ -8,7 +8,7 @@ export var PLAYERS: Player[] = [
         "lastname": "Сагиров",
         "birthdate": "",
         "city": "Екатеринбург",
-        "imgpath": "",
+        "imgpath": "shsagirov",
         "statlink": "pupik",
         "steam": "id/pupik"
     },
@@ -19,7 +19,7 @@ export var PLAYERS: Player[] = [
         "lastname": "Зайцев",
         "birthdate": "",
         "city": "Набережные Челны",
-        "imgpath": "",
+        "imgpath": "azaitsev",
         "statlink": "zaytsevalek",
         "steam": "id/zaytsevalek"
     },
@@ -30,7 +30,7 @@ export var PLAYERS: Player[] = [
         "lastname": "Ромашин",
         "birthdate": "",
         "city": "Казань",
-        "imgpath": "",
+        "imgpath": "aromashin",
         "statlink": "Ubica_Padonkoff",
         "steam": "id/Ubica_Padonkoff"
     },
@@ -41,7 +41,7 @@ export var PLAYERS: Player[] = [
         "lastname": "Соболев",
         "birthdate": "",
         "city": "Екатеринбург",
-        "imgpath": "",
+        "imgpath": "osobolev",
         "statlink": "webko",
         "steam": "id/webko"
     },
@@ -52,7 +52,7 @@ export var PLAYERS: Player[] = [
         "lastname": "Белик",
         "birthdate": "",
         "city": "Екатеринбург/Тюмень",
-        "imgpath": "",
+        "imgpath": "abelik",
         "statlink": "76561198085219767",
         "steam": "profiles/76561198085219767"
     },
