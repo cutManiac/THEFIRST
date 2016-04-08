@@ -1,16 +1,23 @@
-<div *ngIf="player">
-    <h2>{{player.name}} details!</h2>
-
-
-    <div class="{{player.name}}">
-        <div>
-            11
-            <img src="src/img/pic/{{player.imgpath}}.jpg" alt="NOT FOUND"/>111
-        </div>
-        <label>name: </label>
-        <label>{{player.firstname}} {{player.lastname}}</label>
-        <img src="http://csgo-stats.com/{{player.statlink}}/graphic.png"/>
-        <a target="_blank" href="https://steamcommunity.com/{{player.steam}}">STEAM</a>
+<div *ngIf="player" class="player">
+    <div class="player_image">
+        <img src="src/img/pic/{{player.imgpath}}.jpg" alt="NOT FOUND"/>
     </div>
-    <button (click)="goBack()">Back</button>
+    <div class="player_detail">
+        <div class="player_detail_head">
+            <p>{{player.name}}</p>
+        </div>
+        <div>
+            <label>name: </label>
+            <label>{{player.firstname}} {{player.lastname}}</label>
+        </div>
+        <div>
+            <img src="http://csgo-stats.com/{{player.statlink}}/graphic.png"/>
+        </div>
+        <div>
+            <a target="_blank" href="https://steamcommunity.com/{{player.steam}}">STEAM</a>
+        </div>
+        <div>
+            <button (click)="goBack()">Back</button>
+        </div>
+    </div>
 </div>

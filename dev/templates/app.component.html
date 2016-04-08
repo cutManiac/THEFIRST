@@ -1,9 +1,12 @@
-<div class="header">
-    <nav>
-        <a [routerLink]="['Dashboard']">MAIN</a>
-        <a [routerLink]="['Players']">PLAYERS</a>
-    </nav>
-</div>
-<div class="content">
-    <router-outlet></router-outlet>
+<div class="container">
+    <div class="header" role="header">
+        <nav>
+            <a [routerLink]="['Dashboard']">MAIN</a>
+            <a [routerLink]="['Players']">PLAYERS</a>
+        </nav>
+    </div>
+    <div role="main">
+            <router-outlet></router-outlet>
+    </div>
+    <div role="footer">2</div>
 </div>

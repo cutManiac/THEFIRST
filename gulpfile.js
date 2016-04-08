@@ -52,6 +52,7 @@ gulp.task('build:styl', function () {
     return gulp.src(assetsDev + 'styl/*.styl')
         .pipe(sourcemaps.init())
         .pipe(stylus())
+        .pipe(postcss([autoprefixer, cssnano]))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(assetsProd + 'css/'));
 });
