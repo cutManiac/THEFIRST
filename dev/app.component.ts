@@ -5,6 +5,8 @@ import { PlayerService }     from './player.service';
 import { PlayersComponent } from './players.component';
 import { PlayerDetailComponent } from './player-detail.component';
 import { DashboardComponent } from './dashboard.component';
+import { VideoComponent } from './video.component';
+import { VideoService } from './video.service';
 
 @Component({
     selector: 'my-app',
@@ -12,7 +14,8 @@ import { DashboardComponent } from './dashboard.component';
     directives: [ROUTER_DIRECTIVES],
     providers: [
         ROUTER_PROVIDERS,
-        PlayerService
+        PlayerService,
+        VideoService
     ]
 })
 @RouteConfig([
@@ -28,9 +31,14 @@ import { DashboardComponent } from './dashboard.component';
         component: PlayerDetailComponent
     },
     {
-        path: '/video',
+        path: '/players',
         name: 'Players',
         component: PlayersComponent
+    },
+    {
+        path: '/video',
+        name: 'Video',
+        component: VideoComponent
     }
 ])
 export class AppComponent {

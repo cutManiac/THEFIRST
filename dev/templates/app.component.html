@@ -1,12 +1,15 @@
-<div class="container">
-    <div class="header" role="header">
-        <nav>
-            <a [routerLink]="['Dashboard']">MAIN</a>
-            <a [routerLink]="['Players']">PLAYERS</a>
-        </nav>
-    </div>
-    <div role="main">
-            <router-outlet></router-outlet>
-    </div>
-    <div role="footer">2</div>
-</div>
+<header>
+    <nav class="container header clear">
+        <ul>
+            <li class="left"><a [routerLink]="['Players']">ИГРОКИ</a></li>
+            <li class="right"><a [routerLink]="['Video']">ВИДЕО</a></li>
+        </ul>
+    </nav>
+    <i class="grachi_logo" [routerLink]="['Dashboard']"></i>
+</header>
+<main class="container">
+    <router-outlet></router-outlet>
+</main>
+<footer class="container">
+    rP@4u&trade; 2016
+</footer>

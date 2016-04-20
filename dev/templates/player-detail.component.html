@@ -1,4 +1,4 @@
-<div *ngIf="player" class="player">
+<section *ngIf="player">
     <div class="player_image">
         <img src="src/img/pic/{{player.imgpath}}.jpg" alt="NOT FOUND"/>
     </div>
@@ -11,7 +11,7 @@
             <label>{{player.firstname}} {{player.lastname}}</label>
         </div>
         <div>
-            <img src="http://csgo-stats.com/{{player.statlink}}/graphic.png"/>
+            <img src="http://csgo-stats.com/{{player.steam.split('/')[1]}}/graphic.png" />
         </div>
         <div>
             <a target="_blank" href="https://steamcommunity.com/{{player.steam}}">STEAM</a>
@@ -19,5 +19,8 @@
         <div>
             <button (click)="goBack()">Back</button>
         </div>
+        <div id="id01"></div>
+
+
     </div>
-</div>
+</section>

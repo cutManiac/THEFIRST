@@ -4,8 +4,7 @@
     <title>rP@4u official</title>
     <base href="/">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">    
-    <link rel="stylesheet" href="src/css/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 1. Load libraries -->
     <!-- IE required polyfills, in this exact order -->
     <script src="node_modules/es6-shim/es6-shim.min.js"></script>
@@ -29,9 +28,14 @@
       System.import('app/main')
             .then(null, console.error.bind(console));
     </script>
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+    <script src="src/js/scroll.js"></script>
+    <link rel="stylesheet" href="node_modules/normalize.css/normalize.css">
+    <link rel="stylesheet" href="src/css/main.css">
+
   </head>
   <!-- 3. Display the application -->
   <body>
-    <my-app>Loading...</my-app>
+    <my-app>ОЖИДАНИЕ</my-app>
   </body>
 </html>

@@ -4,16 +4,6 @@ thirdColor=#585d84
 fourthColor=#ead27f
 fifthColor=#776a58
 
-@font-face {
-  font-family: "ACLineRegular";
-  src: url("../fonts/ACLineRegular/ACLineRegular.eot");
-  src: url("../fonts/ACLineRegular/ACLineRegular.eot?#iefix")format("embedded-opentype"),
-  url("../fonts/ACLineRegular/ACLineRegular.woff") format("woff"),
-  url("../fonts/ACLineRegular/ACLineRegular.ttf") format("truetype");
-  font-style: normal;
-  font-weight: normal;
-}
-
 @keyframes scaleDown {
   from {
     opacity: 0;
@@ -26,66 +16,86 @@ fifthColor=#776a58
 }
 
 html
-  background-color secondColor
-  font 16pt ACLineRegular
+  background #dc9d64 url('../img/grecha-texture.jpg')
+  font bold 16px Arial, Helvetica, sans-serif
   margin 0
+  padding 0
 
 body
   margin 0
+  padding 0
 
 a
   color #000000
   text-decoration none
-  :hover
-    text-decoration dotted
-
-
-/*header*/
-  /*order 2*/
-
-/*main*/
-  /*order 3*/
-
-/*footer*/
-  /*order 1*/
 
 .container
-  display flex
-  flex-direction column
-  justify-content space-between
+  margin 0 auto
+  width 950px
 
-.content
-  margin 0 150px
-  align-content  center
+
+.grachi_logo
+  background url('../img/grachi-logo.svg') no-repeat top left
+  display block
+  left 50%
+  position fixed
+  top 0
+  height 300px
+  margin-left -150px
+  width 300px
+  &.small
+    height 80px
+    margin-left -40px
+    width 80px
+
+
+
+header
+  background #b8d1e5 url('../img/sky-texture.jpg')
+  margin 0
+  padding 0
+
+main
+  background #feffff
+  margin 0
+  padding 10px 30px
+
+footer
+  margin 0
+  padding 0
+
+.clear
+  ::after
+    content ''
+    display table
+    clear both
+
 
 
 .header
-  background-color mainColor
-  font-size 2em
-  font-weight bold
-  height 1em
-  margin 0
-  padding 1em
-
-.player
-  animation scaleDown 2s ease both
-
-.player_image
-  border-radius 10%
-  /*display block*/
-  /*float left*/
-  /*:after*/
-    /*clear both*/
-
-.player_detail
-  margin auto
-
-.player_detail_head
-  background thirdColor
-  font-color #ffffff
-  font-size 1.5rem
-  padding .3em
-  text-align center
-
-
-
+  ul
+    font-size 0px
+    list-style none
+    margin 0
+    padding 0
+  li
+    display inline-block
+    font-size 36px
+    line-height 40px
+    vertical-align top
+  a
+    color #010101
+    display block
+    padding 60px 80px
+    text-decoration none
+    &:hover
+      background rgba(230,230,230,0.3)
+      text-shadow: 0 0 40px #999999
+  .left
+    float left
+    width 300px
+    text-align center
+  .right
+    float right
+    width 300px
+    text-align center

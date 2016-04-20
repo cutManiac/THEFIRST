@@ -6,6 +6,15 @@ var assetsProd = 'src/';
 var appDev = 'dev/';
 var appProd = 'app/';
 
+/* script variables */
+var stylDev = assetsDev + 'styl/*.styl';
+var tsDev = appDev + '**/*.ts';
+var imgDev = assetsDev + 'img/**/*.{jpg,png}';
+var svgDev = assetsDev + 'img/**/*.svg';
+var fontDev = assetsDev + 'fonts/**/*';
+var htmlDev = appDev + '**/*.html';
+var jsDev = assetsDev + 'js/**/*.js';
+
 /* Mixed */
 var ext_replace = require('gulp-ext-replace');
 var ignore = require('gulp-ignore');
@@ -37,19 +46,11 @@ gulp.task('clean:app', function () {
     return del('app');
 });
 
-gulp.task('clean', ['clean:app','clean:src']);
+gulp.task('clean', gulp.parallel('clean:app','clean:src'));
 
-gulp.task('build:scss', function () {
-    return gulp.src(assetsDev + 'scss/*.scss')
-        .pipe(sourcemaps.init())
-        .pipe(postcss([precss, autoprefixer, cssnano]))
-        .pipe(sourcemaps.write())
-        .pipe(ext_replace('.css'))
-        .pipe(gulp.dest(assetsProd + 'css/'));
-});
-
+/* STYLUS */
 gulp.task('build:styl', function () {
-    return gulp.src(assetsDev + 'styl/*.styl')
+    return gulp.src(stylDev)
         .pipe(sourcemaps.init())
         .pipe(stylus())
         .pipe(postcss([autoprefixer, cssnano]))
@@ -57,17 +58,19 @@ gulp.task('build:styl', function () {
         .pipe(gulp.dest(assetsProd + 'css/'));
 });
 
+/* TYPESCRIPT */
 gulp.task('build:ts', function () {
-    return gulp.src(appDev + '**/*.ts')
+    return gulp.src(tsDev)
         .pipe(sourcemaps.init())
         .pipe(typescript(tsProject))
         .pipe(sourcemaps.write())
-        //.pipe(jsuglify())
+        .pipe(jsuglify())
         .pipe(gulp.dest(appProd));
 });
 
+/* IMAGES */
 gulp.task('build:img', function () {
-    return gulp.src(assetsDev + 'img/**/*')
+    return gulp.src(imgDev)
         .pipe(ignore.exclude(['thumbnails', 'thumbnails/*']))
         .pipe(newer(assetsProd + 'img/'))
         .pipe(imagemin({
@@ -76,29 +79,44 @@ gulp.task('build:img', function () {
         .pipe(gulp.dest(assetsProd + 'img/'));
 });
 
+/* SVG */
+gulp.task('build:svg', function () {
+    return gulp.src(svgDev)
+        .pipe(newer(assetsProd + 'img/'))
+        .pipe(gulp.dest(assetsProd + 'img/'));
+});
+
+/* FONTS */
 gulp.task('build:fonts', function () {
-    return gulp.src(assetsDev + 'fonts/**/*')
+    return gulp.src(fontDev)
         .pipe(newer(assetsProd + 'fonts/'))
-        .pipe(imagemin({
-            progressive: true
-        }))
         .pipe(gulp.dest(assetsProd + 'fonts/'));
 });
 
+/* JS */
+gulp.task('build:js', function () {
+    return gulp.src(jsDev)
+        .pipe(newer(assetsProd + 'js/'))
+        .pipe(jsuglify())
+        .pipe(gulp.dest(assetsProd + 'js/'));
+});
+
+/* HTML */
 gulp.task('build:html', function () {
-    return gulp.src(appDev + '**/*.html')
+    return gulp.src(htmlDev)
         .pipe(gulp.dest(appProd));
 });
 
-gulp.task('build', ['build:ts', 'build:styl', 'build:html', 'build:img', 'build:fonts']);
+gulp.task('build', gulp.parallel('build:ts', 'build:styl', 'build:html', 'build:img', 'build:svg', 'build:fonts', 'build:js'));
 
 gulp.task('watch', function () {
-    gulp.watch(appDev + '**/*.ts', ['build:ts']);
-    //gulp.watch(assetsDev + 'scss/**/*.scss', ['build:scss']);
-    gulp.watch(assetsDev + 'styl/**/*.styl', ['build:styl']);
-    gulp.watch(assetsDev + 'img/*', ['build:img']);
-    gulp.watch(assetsDev + 'fonts/*', ['build:fonts']);
-    gulp.watch(appDev + '**/*.html', ['build:html']);
+    gulp.watch(tsDev, gulp.series('build:ts'));
+    gulp.watch(stylDev, gulp.series('build:styl'));
+    gulp.watch(imgDev, gulp.series('build:img'));
+    gulp.watch(svgDev, gulp.series('build:svg'));
+    gulp.watch(fontDev, gulp.series('build:fonts'));
+    gulp.watch(jsDev, gulp.series('build:js'));
+    gulp.watch(htmlDev, gulp.series('build:html'));
 });
 
-gulp.task('default', ['watch', 'build']);
+gulp.task('default', gulp.series('build', 'watch'));

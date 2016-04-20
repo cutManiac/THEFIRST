@@ -6,6 +6,6 @@ export class Player {
     birthdate: string;
     city: string;
     imgpath: string;
-    statlink: string;
     steam: string;
+    steamid64: string;
 }

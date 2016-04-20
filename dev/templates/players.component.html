@@ -1,12 +1,16 @@
-<h2>My Heroes</h2>
-<ul class="players">
-    <li *ngFor="#player of players" (click)="onSelect(player)" [class.selected]="player === selectedPlayer">
-        <span class="badge">{{player.id}}</span> {{player.name}}
-    </li>
-</ul>
-<div *ngIf="selectedPlayer">
-    <h2>
-        {{selectedPlayer.name | uppercase}} is my player
-    </h2>
-    <button (click)="gotoDetail()">View Details</button>
-</div>
+<section>
+
+    <div>{{img}}</div>
+    <h2>My Heroes</h2>
+    <ul>
+        <li *ngFor="#player of players" (click)="onSelect(player)" [class.selected]="player === selectedPlayer">
+            <span>{{player.name}}</span>
+        </li>
+    </ul>
+    <div *ngIf="selectedPlayer">
+        <h2>
+            {{selectedPlayer.name | uppercase}} is my player
+        </h2>
+        <button (click)="gotoDetail()">View Details</button>
+    </div>
+</section>

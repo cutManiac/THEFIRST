@@ -9,8 +9,8 @@ export var PLAYERS: Player[] = [
         "birthdate": "",
         "city": "Екатеринбург",
         "imgpath": "shsagirov",
-        "statlink": "pupik",
-        "steam": "id/pupik"
+        "steam": "id/pupik",
+        "steamid64": "76561197999783103"
     },
     {
         "id": 2,
@@ -20,8 +20,8 @@ export var PLAYERS: Player[] = [
         "birthdate": "",
         "city": "Набережные Челны",
         "imgpath": "azaitsev",
-        "statlink": "zaytsevalek",
-        "steam": "id/zaytsevalek"
+        "steam": "id/zaytsevalek",
+        "steamid64": "76561198052360874"
     },
     {
         "id": 3,
@@ -31,8 +31,8 @@ export var PLAYERS: Player[] = [
         "birthdate": "",
         "city": "Казань",
         "imgpath": "aromashin",
-        "statlink": "Ubica_Padonkoff",
-        "steam": "id/Ubica_Padonkoff"
+        "steam": "id/Ubica_Padonkoff",
+        "steamid64": "76561198051224215"
     },
     {
         "id": 4,
@@ -42,8 +42,8 @@ export var PLAYERS: Player[] = [
         "birthdate": "",
         "city": "Екатеринбург",
         "imgpath": "osobolev",
-        "statlink": "webko",
-        "steam": "id/webko"
+        "steam": "id/webko",
+        "steamid64": "76561198014941455"
     },
     {
         "id": 5,
@@ -53,8 +53,8 @@ export var PLAYERS: Player[] = [
         "birthdate": "",
         "city": "Екатеринбург/Тюмень",
         "imgpath": "abelik",
-        "statlink": "76561198085219767",
-        "steam": "profiles/76561198085219767"
+        "steam": "profiles/76561198085219767",
+        "steamid64": "76561198085219767"
     },
     {
         "id": 6,
@@ -64,7 +64,7 @@ export var PLAYERS: Player[] = [
         "birthdate": "",
         "city": "Екатеринбург",
         "imgpath": "",
-        "statlink": "76561198005944552",
-        "steam": "profiles/76561198005944552"
+        "steam": "profiles/76561198005944552",
+        "steamid64": "76561198005944552"
     }
 ];
