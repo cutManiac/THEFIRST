@@ -60,6 +60,20 @@ body{
     border-right:1px solid #ddd;
 }
 
-.jumbotron {
-    background: grey;
+.photos p { 
+    display: inline-block; 
+    width: 20%; 
+    margin: 0; 
+    text-align: center; 
+} 
+
+.photos { 
+    display: inline-block; 
+    width: 100%; 
+    font-size: 0; 
+} 
+
+.jumbotron { 
+    background: #f3f3f3; 
+    padding: 80px 0; 
 }
